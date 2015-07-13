@@ -20,6 +20,8 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         _recyclerView = (RecyclerView)findViewById(R.id.my_recycler_view);
         _recyclerView.setHasFixedSize(true);
+
+        /*LayoutManager deals with rendering our views, ViewHolders. */
         _layoutManager = new LinearLayoutManager(this);
         _recyclerView.setLayoutManager(_layoutManager);
 //        _adapter = new
