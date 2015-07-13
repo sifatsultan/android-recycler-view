@@ -24,13 +24,12 @@ public class MainActivity extends ActionBarActivity {
         _recyclerView.setLayoutManager(_layoutManager);
 //        _adapter = new
 
-
-
-
-
-
-
-
+        String[] dataset = new String[10];
+        for (int i=0;i<dataset.length; i++){
+            dataset[i]="Jello"+i;
+        }
+        _adapter = new MyAdapter(dataset);
+        _recyclerView.setAdapter(_adapter);
 
     }
 
