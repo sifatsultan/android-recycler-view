@@ -7,31 +7,30 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.concurrent.RecursiveAction;
+
 
 public class MainActivity extends ActionBarActivity {
-
     private RecyclerView _recyclerView;
-    private RecyclerView.Adapter _adapter;
+    private MyAdapter _myAdapter;
     private RecyclerView.LayoutManager _layoutManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         _recyclerView = (RecyclerView)findViewById(R.id.my_recycler_view);
-        _recyclerView.setHasFixedSize(true);
-
-        /*LayoutManager deals with rendering our views, ViewHolders. */
         _layoutManager = new LinearLayoutManager(this);
         _recyclerView.setLayoutManager(_layoutManager);
-//        _adapter = new
-
-        String[] dataset = new String[10];
-        for (int i=0;i<dataset.length; i++){
-            dataset[i]="Jello"+i;
+        ArrayList<String> _input = new ArrayList<String>();
+        for(int i=0;i<100;i++){
+            _input.add("Test"+i);
         }
-        _adapter = new MyAdapter(dataset);
-        _recyclerView.setAdapter(_adapter);
+        _myAdapter = new MyAdapter(_input);
+        _recyclerView.setAdapter(_myAdapter);
+//        _myAdapter.remove("Test 1");
 
     }
 
